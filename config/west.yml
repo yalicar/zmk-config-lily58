@@ -2,20 +2,18 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: ftc
-      url-base: https://github.com/ftc
     - name: mctechnology17
       url-base: https://github.com/mctechnology17
 
   projects:
     - name: zmk
-      remote: ftc
-      revision: mouse-ftc
+      remote: zmkfirmware
+      revision: v0.3.0
       import: app/west.yml
 
     - name: zmk-nice-oled
       remote: mctechnology17
-      revision: main
+      revision: v0.0.2
 
   self:
     path: config
