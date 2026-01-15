@@ -23,8 +23,11 @@
                         &kp LGUI &mo 1 &kp LALT   &kp SPACE  &kp RET &kp RALT &kp RSHFT &mo 2
       >;
 
-      /* Encoder L + Encoder R: Vol up/down */
-      sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN  &inc_dec_kp C_VOL_UP C_VOL_DN>;
+      /* Encoder L + Encoder R: Vol up/down (more compatible keycodes) */
+      sensor-bindings = <
+        &inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN
+        &inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN
+      >;
     };
 
     lower_layer {
@@ -36,8 +39,11 @@
                                      &trans        &trans        &trans       		        &trans           &trans    		&kp K_APP  	    &trans    	&trans
       >;
 
-      /* Encoder L + Encoder R: Vol up/down */
-      sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN  &inc_dec_kp C_VOL_UP C_VOL_DN>;
+      /* Encoder L + Encoder R: Vol up/down (more compatible keycodes) */
+      sensor-bindings = <
+        &inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN
+        &inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN
+      >;
     };
 
     raise_layer {
@@ -49,8 +55,11 @@
 						  										&trans		        &trans	        &trans         &trans   									&trans    &trans      &trans     &trans
       >;
 
-      /* Encoder L + Encoder R: Vol up/down */
-      sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN  &inc_dec_kp C_VOL_UP C_VOL_DN>;
+      /* Encoder L + Encoder R: Vol up/down (more compatible keycodes) */
+      sensor-bindings = <
+        &inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN
+        &inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN
+      >;
     };
   };
 };
