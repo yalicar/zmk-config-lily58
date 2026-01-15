@@ -13,22 +13,26 @@
 #
 ---
 include:
+  # LEFT normal (split)
   - board: nice_nano_v2
     shield: lily58_left nice_oled
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_BT_DEVICE_NAME=\"L58-L\"
     artifact-name: lily58_left_oled_studio
 
+  # RIGHT normal (split)
   - board: nice_nano_v2
     shield: lily58_right nice_oled
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_BT_DEVICE_NAME=\"L58-R-NEW\"
     artifact-name: lily58_right_oled_studio
-  # RIGHT solo por USB (para pruebas, NO split)
+
+  # RIGHT: settings reset (flashear ESTE al right antes del test por USB)
   - board: nice_nano_v2
     shield: settings_reset
-    artifact-name: reset_right_before_usb_test
+    artifact-name: settings_reset_right
 
+  # RIGHT: USB test (intenta usarlo como teclado por cable; BLE apagado)
   - board: nice_nano_v2
     shield: lily58_right nice_oled
     snippet: studio-rpc-usb-uart
@@ -38,6 +42,3 @@ include:
       -DCONFIG_ZMK_BLE=n
       -DCONFIG_ZMK_USB=y
     artifact-name: lily58_right_usb_test
-    
-
-
