@@ -1,29 +1,14 @@
-name: Show Lily58 encoder pins
-
-on:
-  workflow_dispatch:
-
-jobs:
-  pins:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout config repo
-        uses: actions/checkout@v4
-
-      - name: Clone ZMK
-        run: |
-          git clone --depth 1 https://github.com/zmkfirmware/zmk.git zmk
-
-      - name: Print Lily58 encoder gpios
+      - name: Find Lily58 shield and encoder gpios
         run: |
           set -e
-          echo "== Lily58 shield files =="
-          ls -la zmk/app/boards/shields/lily58
+
+          echo "== Find Lily58 shield folders =="
+          find zmk/app/boards/shields -maxdepth 3 -type d -iname "*lily58*" -print || true
 
           echo
-          echo "== Encoder definitions (look for a-gpios/b-gpios) =="
-          grep -RIn "a-gpios|b-gpios|encoder" zmk/app/boards/shields/lily58 || true
+          echo "== Find encoder / EC11 references anywhere in shields =="
+          grep -RIn "EC11|encoder|rotary|a-gpios|b-gpios" zmk/app/boards/shields || true
 
           echo
-          echo "== If not found there, search all shields =="
-          grep -RIn "a-gpios|b-gpios" zmk/app/boards/shields | head -n 200 || true
+          echo "== Find your exact shields (lily58_left/right) =="
+          grep -RIn "lily58_left|lily58_right" zmk/app/boards/shields || true
