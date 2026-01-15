@@ -1,5 +1,0 @@
-/* Encoder RIGHT pins override: A=P0.31, B=P0.29 */
-&right_encoder {
-  a-gpios = <&gpio0 31 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
-  b-gpios = <&gpio0 29 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
-};
