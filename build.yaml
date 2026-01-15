@@ -38,5 +38,6 @@ include:
       -DCONFIG_ZMK_BLE=n
       -DCONFIG_ZMK_USB=y
     artifact-name: lily58_right_usb_test
+    
 
 
