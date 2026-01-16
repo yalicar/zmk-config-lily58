@@ -23,10 +23,10 @@
                         &kp LGUI &mo 1 &kp LALT   &kp SPACE  &kp RET &kp RALT &kp RSHFT &mo 2
       >;
 
-      /* Encoder L: A/B  | Encoder R: C/D */
+      /* Encoder L: Vol up/down | Encoder R: Up/Down arrows */
       sensor-bindings = <
-        &inc_dec_kp A B
-        &inc_dec_kp C D
+        &inc_dec_kp C_VOL_UP C_VOL_DN
+        &inc_dec_kp UP DOWN
       >;
     };
 
@@ -39,10 +39,10 @@
                                      &trans        &trans        &trans       		        &trans           &trans    		&kp K_APP  	    &trans    	&trans
       >;
 
-      /* Encoder L: A/B  | Encoder R: C/D */
+      /* Encoder L: Vol up/down | Encoder R: Up/Down arrows */
       sensor-bindings = <
-        &inc_dec_kp A B
-        &inc_dec_kp C D
+        &inc_dec_kp C_VOL_UP C_VOL_DN
+        &inc_dec_kp UP DOWN
       >;
     };
 
@@ -55,10 +55,10 @@
 						  										&trans		        &trans	        &trans         &trans   									&trans    &trans      &trans     &trans
       >;
 
-      /* Encoder L: A/B  | Encoder R: C/D */
+      /* Encoder L: Vol up/down | Encoder R: Up/Down arrows */
       sensor-bindings = <
-        &inc_dec_kp A B
-        &inc_dec_kp C D
+        &inc_dec_kp C_VOL_UP C_VOL_DN
+        &inc_dec_kp UP DOWN
       >;
     };
   };
