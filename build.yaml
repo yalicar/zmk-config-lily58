@@ -1,29 +1,32 @@
 include:
+  # LEFT normal (split + oled) → CENTRAL → volumen
   - board: nice_nano_v2
     shield: lily58_left nice_oled
     snippet: studio-rpc-usb-uart
     cmake-args: >
       -DCONFIG_ZMK_STUDIO=y
       -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=y
-      -DDTC_OVERLAY_FILE=${ZMK_CONFIG}/lily58_encoders.overlay
+      -DDTC_OVERLAY_FILE=/__w/zmk-config-lily58/zmk-config-lily58/config/lily58_encoders.overlay
       -DCONFIG_BT_DEVICE_NAME=\"L58-L\"
     artifact-name: lily58_left_oled_studio
 
+  # RIGHT normal (split + oled) → PERIPHERAL (por defecto)
   - board: nice_nano_v2
     shield: lily58_right nice_oled
     snippet: studio-rpc-usb-uart
     cmake-args: >
       -DCONFIG_ZMK_STUDIO=y
-      -DDTC_OVERLAY_FILE=${ZMK_CONFIG}/lily58_encoders.overlay
+      -DDTC_OVERLAY_FILE=/__w/zmk-config-lily58/zmk-config-lily58/config/lily58_encoders.overlay
       -DCONFIG_BT_DEVICE_NAME=\"L58-R\"
     artifact-name: lily58_right_oled_studio
 
+  # RIGHT TEST (como central para pruebas) ⚠️
   - board: nice_nano_v2
     shield: lily58_right nice_oled
     snippet: studio-rpc-usb-uart
     cmake-args: >
       -DCONFIG_ZMK_STUDIO=y
       -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=y
-      -DDTC_OVERLAY_FILE=${ZMK_CONFIG}/lily58_encoders.overlay
+      -DDTC_OVERLAY_FILE=/__w/zmk-config-lily58/zmk-config-lily58/config/lily58_encoders.overlay
       -DCONFIG_BT_DEVICE_NAME=\"L58-R-TEST\"
     artifact-name: TEST_right_as_central
