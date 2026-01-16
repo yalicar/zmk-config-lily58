@@ -23,17 +23,13 @@
                         &kp LGUI &mo 1 &kp LALT   &kp SPACE  &kp RET &kp RALT &kp RSHFT &mo 2
       >;
 
-      /* Split note:
-       * Each half only has ONE encoder, so it's always "sensor 0".
-       * CENTRAL half (usually Left): Volume
-       * PERIPHERAL half (usually Right): Up/Down arrows
+      /* Encoders (requires 2-sensor overlay):
+       * sensor 0 = encoder izquierdo  -> volumen
+       * sensor 1 = encoder derecho    -> flechas arriba/abajo
        */
       sensor-bindings = <
-#if IS_ENABLED(CONFIG_ZMK_SPLIT_ROLE_CENTRAL)
         &inc_dec_kp C_VOL_UP C_VOL_DN
-#else
         &inc_dec_kp UP DOWN
-#endif
       >;
     };
 
@@ -47,11 +43,8 @@
       >;
 
       sensor-bindings = <
-#if IS_ENABLED(CONFIG_ZMK_SPLIT_ROLE_CENTRAL)
         &inc_dec_kp C_VOL_UP C_VOL_DN
-#else
         &inc_dec_kp UP DOWN
-#endif
       >;
     };
 
@@ -65,11 +58,8 @@
       >;
 
       sensor-bindings = <
-#if IS_ENABLED(CONFIG_ZMK_SPLIT_ROLE_CENTRAL)
         &inc_dec_kp C_VOL_UP C_VOL_DN
-#else
         &inc_dec_kp UP DOWN
-#endif
       >;
     };
   };
