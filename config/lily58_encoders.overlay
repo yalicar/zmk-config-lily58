@@ -1,8 +1,8 @@
 / {
   chosen {
-    zmk,sensors = <&encoder_left &encoder_right>;
+    zmk,sensors = <&left_encoder &right_encoder>;
   };
 };
 
-&encoder_left { status = "okay"; };
-&encoder_right { status = "okay"; };
+&left_encoder { status = "okay"; };
+&right_encoder { status = "okay"; };
